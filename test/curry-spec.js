@@ -5,7 +5,7 @@ var curryHouse = require('../lib/curry-house');
 console.log(curryHouse);
 
 describe('Curry House', function() {
-  
+
   describe('calculate', function() {
     var calculate = curryHouse.calculate;
 
@@ -45,25 +45,25 @@ describe('Curry House', function() {
     var random = curryHouse.random;
 
     describe('to', function() {
-    
+
       it('should generate random numbers from start to end (exclusive)', function() {
         var to50 = random(50);
         for (var i = 0; i < 100; i++) {
           to50.to(60).should.be.within(50,59);
         }
       });
-      
+
     });
 
     describe('toIncluding', function() {
-    
+
       it('should generate random numbers from start to end (inclusive)', function() {
         var to50 = random(50);
         for (var i = 0; i < 100; i++) {
           to50.to(60).should.be.within(50,60);
         }
       });
-      
+
     });
 
   });
@@ -90,7 +90,7 @@ describe('Curry House', function() {
 
   describe('calculator', function() {
     describe('returns a calculating function that operates the second argument onto the first', function() {
-      
+
       describe('add', function() {
         it('should add', function() {
           curryHouse.calculator('add')(4,5).should.equal(9);
@@ -136,7 +136,7 @@ describe('Curry House', function() {
     });
 
     describe('curried calculator functions', function() {
-      
+
       describe('add5', function() {
         it('should add 5', function() {
           curryHouse.add5(4).should.equal(9);
@@ -144,8 +144,8 @@ describe('Curry House', function() {
       });
 
       describe('sub5', function() {
-        it('should subtract 5', function() {
-          curryHouse.sub5(4).should.equal(-1);
+        it('should subtract 4', function() {
+          curryHouse.sub5(4).should.equal(1);
         });
       });
 
@@ -157,19 +157,19 @@ describe('Curry House', function() {
 
       describe('divide5', function() {
         it('should divide by 5', function() {
-          curryHouse.divide5(20).should.equal(4);
+          curryHouse.divide5(5).should.equal(1);
         });
       });
 
       describe('mod5', function() {
         it('should get the remainder of dividing by 5', function() {
-          curryHouse.mod5(99).should.equal(4);
+          curryHouse.mod5(5).should.equal(0);
         });
       });
 
       describe('pow3', function() {
         it('should cube a number', function() {
-          curryHouse.pow3(4).should.equal(64);
+          curryHouse.pow3(3).should.equal(27);
         });
       });
 
